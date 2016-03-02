@@ -1,6 +1,7 @@
 package com.myfirstapp.mytory.myfirstapp;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MyActivity extends AppCompatActivity {
 
@@ -30,6 +33,14 @@ public class MyActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
+            TextView t = new TextView(this);
+            t.setTextSize(20);
+            t.setText("안녕하세요");
+            LinearLayout l = (LinearLayout) findViewById(R.id.home);
+            l.addView(t);
+        }
     }
 
     @Override
@@ -59,6 +70,13 @@ public class MyActivity extends AppCompatActivity {
      * @param view
      */
     public void sendMessage(View view) {
+//        String title = getResources().getString(R.string.app_name);
+//        TextView textView = new TextView(this);
+//        textView.setTextSize(20);
+//        textView.setText(title);
+//        LinearLayout layout = (LinearLayout) findViewById(R.id.home);
+//        layout.addView(textView);
+
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
