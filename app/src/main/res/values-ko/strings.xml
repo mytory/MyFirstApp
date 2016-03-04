@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">첫 번째 앱</string>
+    <string name="action_settings">설정</string>
+    <string name="button_send">전송</string>
+    <string name="edit_message">입력하세요</string>
+    <string name="title_activity_display_message">내 메시지</string>
+</resources>
